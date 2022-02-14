@@ -10,6 +10,10 @@
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   font-size: 1rem;
+
+  @media screen and (min-width: 768px) {
+      font-size: 1.2rem;
+  }
 }
 
 .calculator-body {
@@ -49,6 +53,10 @@
       width: 80%;
       background-color: $button-base;
       color: $light-text;
+
+      @media screen and (min-width: 768px) {
+          border-radius: 30%;
+      }
 
       &__clear {
         grid-area: 1/1/2/2;
@@ -149,3 +157,9 @@
     }
   }
 }
+
+// @media screen and (min-width: 768px) {
+//   .buttons {
+//     border-radius: 30%;
+//   }
+// }
