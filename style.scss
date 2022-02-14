@@ -26,6 +26,92 @@
     border: 1px solid black;
     display: grid;
     grid-template-columns: repeat(4 1fr);
+    grid-template-rows: repeat(5 1fr);
     gap: 1rem;
+
+    .buttons {
+      border: 1px solid black;
+
+      &__clear {
+        grid-area: 1/1/2/2;
+      }
+      
+      &__plus-minus {
+        grid-area: 1/2/2/3;
+      }
+
+      &__percent {
+        grid-area: 1/3/2/4;
+      }
+
+      &__divide {
+        grid-area: 1/4/2/5;
+      }
+
+      &__seven {
+        grid-area: 2/1/3/2;
+      }
+
+      &__eight {
+        grid-area: 2/2/3/3;
+      }
+
+      &__nine {
+        grid-area: 2/3/3/4;
+      }
+
+      &__multiply {
+        grid-area: 2/4/3/5;
+      }
+
+      &__four {
+        grid-area: 3/1/4/2;
+      }
+      
+      &__five {
+        grid-area: 3/2/4/3;
+      }
+
+      &__six {
+        grid-area: 3/3/4/4;
+      }
+
+      &__minus {
+        grid-area: 3/4/4/5;
+      }
+
+      &__one {
+        grid-area: 4/1/5/2;
+      }
+
+      &__two {
+        grid-area: 4/2/5/3;
+      }
+
+      &__three {
+        grid-area: 4/3/5/4;
+      }
+
+      &__plus {
+        grid-area: 4/4/5/5;
+      }
+
+      &__zero {
+        grid-area: 5/1/6/2;
+      }
+
+      &__point {
+        grid-area: 5/2/6/3;
+      }
+
+      &__back {
+        grid-area: 5/3/6/4;
+      }
+
+      &__equals {
+        grid-area: 5/4/6/5;
+      }
+
+    }
   }
 }

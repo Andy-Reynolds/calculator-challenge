@@ -25,5 +25,69 @@
   border: 1px solid black;
   display: grid;
   grid-template-columns: repeat(4 1fr);
+  grid-template-rows: repeat(5 1fr);
   gap: 1rem;
+}
+.calculator-body .inputs .buttons {
+  border: 1px solid black;
+}
+.calculator-body .inputs .buttons__clear {
+  grid-area: 1/1/2/2;
+}
+.calculator-body .inputs .buttons__plus-minus {
+  grid-area: 1/2/2/3;
+}
+.calculator-body .inputs .buttons__percent {
+  grid-area: 1/3/2/4;
+}
+.calculator-body .inputs .buttons__divide {
+  grid-area: 1/4/2/5;
+}
+.calculator-body .inputs .buttons__seven {
+  grid-area: 2/1/3/2;
+}
+.calculator-body .inputs .buttons__eight {
+  grid-area: 2/2/3/3;
+}
+.calculator-body .inputs .buttons__nine {
+  grid-area: 2/3/3/4;
+}
+.calculator-body .inputs .buttons__multiply {
+  grid-area: 2/4/3/5;
+}
+.calculator-body .inputs .buttons__four {
+  grid-area: 3/1/4/2;
+}
+.calculator-body .inputs .buttons__five {
+  grid-area: 3/2/4/3;
+}
+.calculator-body .inputs .buttons__six {
+  grid-area: 3/3/4/4;
+}
+.calculator-body .inputs .buttons__minus {
+  grid-area: 3/4/4/5;
+}
+.calculator-body .inputs .buttons__one {
+  grid-area: 4/1/5/2;
+}
+.calculator-body .inputs .buttons__two {
+  grid-area: 4/2/5/3;
+}
+.calculator-body .inputs .buttons__three {
+  grid-area: 4/3/5/4;
+}
+.calculator-body .inputs .buttons__plus {
+  grid-area: 4/4/5/5;
+}
+.calculator-body .inputs .buttons__zero {
+  grid-area: 5/1/6/2;
+}
+.calculator-body .inputs .buttons__point {
+  grid-area: 5/2/6/3;
+}
+.calculator-body .inputs .buttons__back {
+  grid-area: 5/3/6/4;
+}
+.calculator-body .inputs .buttons__equals {
+  grid-area: 5/4/6/5;
 }
