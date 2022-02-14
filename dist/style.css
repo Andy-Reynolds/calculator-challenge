@@ -17,3 +17,13 @@
   height: 20vh;
   border: 1px solid black;
 }
+.calculator-body .inputs {
+  margin: 10px;
+  margin-inline: auto;
+  width: 90%;
+  height: 65vh;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(4 1fr);
+  gap: 1rem;
+}
