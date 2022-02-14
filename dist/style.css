@@ -10,3 +10,10 @@
   height: 90vh;
   border: 1px solid black;
 }
+.calculator-body .screen {
+  margin: 10px;
+  margin-inline: auto;
+  width: 90%;
+  height: 20vh;
+  border: 1px solid black;
+}
