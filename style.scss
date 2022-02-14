@@ -2,9 +2,14 @@
 
 @import "variables.scss";
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
   padding: 0;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .calculator-body {
@@ -31,15 +36,17 @@
     height: 65vh;
     border: 1px solid black;
     display: grid;
-    grid-template-columns: repeat(4 1fr);
-    grid-template-rows: repeat(5 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(5, minmax(0, 1fr));
     gap: 1rem;
     background-color: $input-base;
 
     .buttons {
       border: 1px solid black;
       margin: 10px;
-      border-radius: 20%;
+      margin-inline: auto;
+      border-radius: 50%;
+      width: 80%;
       background-color: $button-base;
       color: $light-text;
 
