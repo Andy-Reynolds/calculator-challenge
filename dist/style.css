@@ -27,8 +27,15 @@
   width: 90%;
   height: 20vh;
   background-color: #33383E;
+  color: white;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 .calculator-body .inputs {
   margin: 10px;
