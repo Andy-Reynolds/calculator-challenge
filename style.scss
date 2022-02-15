@@ -42,13 +42,13 @@
     word-wrap: break-word;
     word-break: break-all;
 
-    .previous-output {
+    #current-input {
       opacity: .75;
       font-size: 1.5rem;
       padding-right: 20px;
     }
 
-    .current-output {
+    #final-result {
       font-size: 2.5rem;
       padding-right: 20px;
     }

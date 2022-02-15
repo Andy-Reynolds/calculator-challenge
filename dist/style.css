@@ -37,12 +37,12 @@
   word-wrap: break-word;
   word-break: break-all;
 }
-.calculator-body .screen .previous-output {
+.calculator-body .screen #current-input {
   opacity: 0.75;
   font-size: 1.5rem;
   padding-right: 20px;
 }
-.calculator-body .screen .current-output {
+.calculator-body .screen #final-result {
   font-size: 2.5rem;
   padding-right: 20px;
 }
