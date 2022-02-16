@@ -66,8 +66,15 @@ const onEqualsButtonClick = (event) => {
   switch(operator) {
     case "add": sum = parseFloat(storedNumber) + parseFloat(currentNumber);
     break;
+    case "minus": sum = parseFloat(storedNumber) - parseFloat(currentNumber);
+    break;
+    case "multiply": sum = parseFloat(storedNumber) * parseFloat(currentNumber);
+    break;
+    case "divide": sum = parseFloat(storedNumber) / parseFloat(currentNumber);
+    break;
   }
   console.log(sum);
+  currentInput.innerText = "";
   finalResult.innerText = sum
 };
 
