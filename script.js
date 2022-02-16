@@ -5,9 +5,10 @@ const clearButton = document.getElementById("clear");
 const backButton = document.getElementById("back");
 const operatorButtons = document.getElementsByClassName("buttons__operator");
 const currentInput = document.getElementById("current-input");
+const finalResult = document.getElementById("final-result");
 const equalsButton = document.getElementById("equals");
 
-let initialNumber = "";
+let currentNumber = "";
 let operator = "";
 let secondaryNumber = "";
 let storedNumber = 0;
@@ -22,9 +23,9 @@ const onNumberButtonClick = (event) => {
   console.log(displayedButton);
   if (displayedButton == Number) {
     currentInput.innerText = "";
-    initialNumber = currentInput.innerText += displayedButton;
+    currentNumber = currentInput.innerText += displayedButton;
   } else {
-    initialNumber = currentInput.innerText += displayedButton;
+    currentNumber = currentInput.innerText += displayedButton;
   }
 };
 
@@ -39,11 +40,11 @@ const onOperatorButtonClick = (event) => {
 
   console.log(operator);
 
-  if (initialNumber) {
-    console.log("Initial number before operator click is " + initialNumber);
-    storedNumber = initialNumber;
-    initialNumber = "";
-    console.log("Initial number after operator click is " + initialNumber);
+  if (currentNumber) {
+    console.log("Current number before operator click is " + currentNumber);
+    storedNumber = currentNumber;
+    currentNumber = "";
+    console.log("Current number after operator click is " + currentNumber);
     console.log("stored number is " + storedNumber);
   }
 };
@@ -51,6 +52,7 @@ const onOperatorButtonClick = (event) => {
 // Clears display
 const onClearButtonClick = (event) => {
   currentInput.innerText = "";
+  finalResult.innerText = "";
 };
 
 // Clears one character from display
@@ -62,10 +64,11 @@ const onBackButtonClick = (event) => {
 // Equals button function
 const onEqualsButtonClick = (event) => {
   switch(operator) {
-    case "add": sum = storedNumber + initialNumber;
+    case "add": sum = parseFloat(storedNumber) + parseFloat(currentNumber);
     break;
   }
   console.log(sum);
+  finalResult.innerText = sum
 };
 
 

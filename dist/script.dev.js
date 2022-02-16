@@ -7,8 +7,9 @@ var clearButton = document.getElementById("clear");
 var backButton = document.getElementById("back");
 var operatorButtons = document.getElementsByClassName("buttons__operator");
 var currentInput = document.getElementById("current-input");
+var finalResult = document.getElementById("final-result");
 var equalsButton = document.getElementById("equals");
-var initialNumber = "";
+var currentNumber = "";
 var operator = "";
 var secondaryNumber = "";
 var storedNumber = 0;
@@ -21,9 +22,9 @@ var onNumberButtonClick = function onNumberButtonClick(event) {
 
   if (displayedButton == Number) {
     currentInput.innerText = "";
-    initialNumber = currentInput.innerText += displayedButton;
+    currentNumber = currentInput.innerText += displayedButton;
   } else {
-    initialNumber = currentInput.innerText += displayedButton;
+    currentNumber = currentInput.innerText += displayedButton;
   }
 }; // Adds clicked operator to display
 
@@ -36,11 +37,11 @@ var onOperatorButtonClick = function onOperatorButtonClick(event) {
   currentInput.innerText = "";
   console.log(operator);
 
-  if (initialNumber) {
-    console.log("Initial number before operator click is " + initialNumber);
-    storedNumber = initialNumber;
-    initialNumber = "";
-    console.log("Initial number after operator click is " + initialNumber);
+  if (currentNumber) {
+    console.log("Current number before operator click is " + currentNumber);
+    storedNumber = currentNumber;
+    currentNumber = "";
+    console.log("Current number after operator click is " + currentNumber);
     console.log("stored number is " + storedNumber);
   }
 }; // Clears display
@@ -48,6 +49,7 @@ var onOperatorButtonClick = function onOperatorButtonClick(event) {
 
 var onClearButtonClick = function onClearButtonClick(event) {
   currentInput.innerText = "";
+  finalResult.innerText = "";
 }; // Clears one character from display
 
 
@@ -60,11 +62,12 @@ var onBackButtonClick = function onBackButtonClick(event) {
 var onEqualsButtonClick = function onEqualsButtonClick(event) {
   switch (operator) {
     case "add":
-      sum = storedNumber + initialNumber;
+      sum = parseFloat(storedNumber) + parseFloat(currentNumber);
       break;
   }
 
   console.log(sum);
+  finalResult.innerText = sum;
 }; // Logic
 // Calls onNumberButtonClick function when number is clicked
 
