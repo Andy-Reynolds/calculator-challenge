@@ -17,15 +17,24 @@ var sum = 0; // Functions
 
 var onNumberButtonClick = function onNumberButtonClick(event) {
   var displayedButton = event.target.innerText;
-  currentInput.innerText += displayedButton;
-  initialNumber = currentInput.innerText += displayedButton;
+  console.log(displayedButton);
+
+  if (displayedButton == Number) {
+    currentInput.innerText = "";
+    initialNumber = currentInput.innerText += displayedButton;
+  } else {
+    initialNumber = currentInput.innerText += displayedButton;
+  }
 }; // Adds clicked operator to display
 
 
 var onOperatorButtonClick = function onOperatorButtonClick(event) {
+  currentInput.innerText = "";
   var displayedButton = event.target.innerText;
   currentInput.innerText += displayedButton;
   operator = event.target.value;
+  currentInput.innerText = "";
+  console.log(operator);
 
   if (initialNumber) {
     console.log("Initial number before operator click is " + initialNumber);
@@ -45,11 +54,17 @@ var onClearButtonClick = function onClearButtonClick(event) {
 var onBackButtonClick = function onBackButtonClick(event) {
   var displayedButton = event.target.innerText;
   currentInput.innerText = currentInput.innerText.slice(0, -1);
-}; // Clears one character from display
+}; // Equals button function
 
 
 var onEqualsButtonClick = function onEqualsButtonClick(event) {
-  var displayedButton = event.target.innerText;
+  switch (operator) {
+    case "add":
+      sum = storedNumber + initialNumber;
+      break;
+  }
+
+  console.log(sum);
 }; // Logic
 // Calls onNumberButtonClick function when number is clicked
 

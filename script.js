@@ -19,16 +19,25 @@ let sum = 0;
 // Adds clicked number to display
 const onNumberButtonClick = (event) => {
   const displayedButton = event.target.innerText;
-  currentInput.innerText += displayedButton;
-  initialNumber = currentInput.innerText += displayedButton;
+  console.log(displayedButton);
+  if (displayedButton == Number) {
+    currentInput.innerText = "";
+    initialNumber = currentInput.innerText += displayedButton;
+  } else {
+    initialNumber = currentInput.innerText += displayedButton;
+  }
 };
 
 // Adds clicked operator to display
 const onOperatorButtonClick = (event) => {
+  currentInput.innerText = "";
   const displayedButton = event.target.innerText;
   currentInput.innerText += displayedButton;
 
   operator = event.target.value;
+  currentInput.innerText = "";
+
+  console.log(operator);
 
   if (initialNumber) {
     console.log("Initial number before operator click is " + initialNumber);
@@ -50,10 +59,13 @@ const onBackButtonClick = (event) => {
   currentInput.innerText = currentInput.innerText.slice(0,-1); 
 };
 
-// Clears one character from display
+// Equals button function
 const onEqualsButtonClick = (event) => {
-  const displayedButton = event.target.innerText;
-  
+  switch(operator) {
+    case "add": sum = storedNumber + initialNumber;
+    break;
+  }
+  console.log(sum);
 };
 
 
