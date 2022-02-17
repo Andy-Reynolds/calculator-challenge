@@ -30,6 +30,14 @@ body {
   background-color: $base;
   border-radius: 10px;
 
+  @media screen and (min-width: 768px) {
+    width: 65%;
+  }
+
+  @media screen and (min-width: 1366px) {
+    width: 50%;
+  }
+
   .screen {
     margin: 10px;
     margin-bottom: 0px;

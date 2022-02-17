@@ -26,6 +26,16 @@ body {
   background-color: #0F0F0F;
   border-radius: 10px;
 }
+@media screen and (min-width: 768px) {
+  .calculator-body {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .calculator-body {
+    width: 50%;
+  }
+}
 .calculator-body .screen {
   margin: 10px;
   margin-bottom: 0px;
