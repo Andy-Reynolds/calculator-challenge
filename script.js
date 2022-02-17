@@ -7,10 +7,11 @@ const operatorButtons = document.getElementsByClassName("buttons__operator");
 const currentInput = document.getElementById("current-input");
 const finalResult = document.getElementById("final-result");
 const equalsButton = document.getElementById("equals");
+const percentButton = document.getElementById("percent");
 
-let currentNumber = "";
+let currentNumber = 0;
 let operator = "";
-let secondaryNumber = "";
+let secondaryNumber = 0;
 let storedNumber = 0;
 let sum = 0;
 
@@ -19,19 +20,23 @@ let sum = 0;
 
 // Adds clicked number to display
 const onNumberButtonClick = (event) => {
+  finalResult.innerText = "";
   const displayedButton = event.target.innerText;
   console.log(displayedButton);
-  if (displayedButton == Number) {
-    currentInput.innerText = "";
+  console.log(currentNumber);
+  // if (displayedButton == Number) {
+    // currentInput.innerText = "";
     currentNumber = currentInput.innerText += displayedButton;
-  } else {
-    currentNumber = currentInput.innerText += displayedButton;
-  }
+  // } else {
+  //   currentNumber = currentInput.innerText += displayedButton;
+  // }
+  console.log(currentNumber);
 };
 
 // Adds clicked operator to display
 const onOperatorButtonClick = (event) => {
   currentInput.innerText = "";
+  finalResult.innerText = "";
   const displayedButton = event.target.innerText;
   currentInput.innerText += displayedButton;
 
@@ -47,12 +52,20 @@ const onOperatorButtonClick = (event) => {
     console.log("Current number after operator click is " + currentNumber);
     console.log("stored number is " + storedNumber);
   }
+
+  console.log(displayedButton);
+  console.log(typeof displayedButton);
 };
 
 // Clears display
 const onClearButtonClick = (event) => {
   currentInput.innerText = "";
   finalResult.innerText = "";
+  currentNumber = "";
+  operator = "";
+  secondaryNumber = "";
+  storedNumber = 0;
+  sum = 0;
 };
 
 // Clears one character from display
@@ -74,11 +87,23 @@ const onEqualsButtonClick = (event) => {
     break;
     case "divide": sum = parseFloat(storedNumber) / parseFloat(currentNumber);
     break;
+    case "" : sum = parseFloat(currentNumber);
   }
   console.log(sum);
   currentInput.innerText = "";
   finalResult.innerText = sum
 };
+
+const onPercentButtonClick = event => {
+  const displayedButton = event.target.innerText;
+  console.log(displayedButton);
+  currentNumber = currentInput.innerText;
+  const percentSum = currentNumber/100;
+  console.log(currentNumber);
+  currentInput.innerText = currentInput.innerText += displayedButton;
+  finalResult.innerText = percentSum;
+  currentNumber = percentSum;
+}
 
 
 // Logic
@@ -102,3 +127,6 @@ backButton.addEventListener("click", onBackButtonClick);
 
 // Calls onEqualsButtonClick function when AC is clicked
 equalsButton.addEventListener("click", onEqualsButtonClick);
+
+// Calls onPercentButtonClick function when AC is clicked
+percentButton.addEventListener("click", onPercentButtonClick);

@@ -1,5 +1,7 @@
 "use strict";
 
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 // Variables
 var allButtons = document.getElementsByClassName("buttons");
 var numberButtons = document.getElementsByClassName("buttons__number");
@@ -9,28 +11,32 @@ var operatorButtons = document.getElementsByClassName("buttons__operator");
 var currentInput = document.getElementById("current-input");
 var finalResult = document.getElementById("final-result");
 var equalsButton = document.getElementById("equals");
-var currentNumber = "";
+var percentButton = document.getElementById("percent");
+var currentNumber = 0;
 var operator = "";
-var secondaryNumber = "";
+var secondaryNumber = 0;
 var storedNumber = 0;
 var sum = 0; // Functions
 // Adds clicked number to display
 
 var onNumberButtonClick = function onNumberButtonClick(event) {
+  finalResult.innerText = "";
   var displayedButton = event.target.innerText;
   console.log(displayedButton);
+  console.log(currentNumber); // if (displayedButton == Number) {
+  // currentInput.innerText = "";
 
-  if (displayedButton == Number) {
-    currentInput.innerText = "";
-    currentNumber = currentInput.innerText += displayedButton;
-  } else {
-    currentNumber = currentInput.innerText += displayedButton;
-  }
+  currentNumber = currentInput.innerText += displayedButton; // } else {
+  //   currentNumber = currentInput.innerText += displayedButton;
+  // }
+
+  console.log(currentNumber);
 }; // Adds clicked operator to display
 
 
 var onOperatorButtonClick = function onOperatorButtonClick(event) {
   currentInput.innerText = "";
+  finalResult.innerText = "";
   var displayedButton = event.target.innerText;
   currentInput.innerText += displayedButton;
   operator = event.target.value;
@@ -44,12 +50,20 @@ var onOperatorButtonClick = function onOperatorButtonClick(event) {
     console.log("Current number after operator click is " + currentNumber);
     console.log("stored number is " + storedNumber);
   }
+
+  console.log(displayedButton);
+  console.log(_typeof(displayedButton));
 }; // Clears display
 
 
 var onClearButtonClick = function onClearButtonClick(event) {
   currentInput.innerText = "";
   finalResult.innerText = "";
+  currentNumber = "";
+  operator = "";
+  secondaryNumber = "";
+  storedNumber = 0;
+  sum = 0;
 }; // Clears one character from display
 
 
@@ -78,11 +92,25 @@ var onEqualsButtonClick = function onEqualsButtonClick(event) {
     case "divide":
       sum = parseFloat(storedNumber) / parseFloat(currentNumber);
       break;
+
+    case "":
+      sum = parseFloat(currentNumber);
   }
 
   console.log(sum);
   currentInput.innerText = "";
   finalResult.innerText = sum;
+};
+
+var onPercentButtonClick = function onPercentButtonClick(event) {
+  var displayedButton = event.target.innerText;
+  console.log(displayedButton);
+  currentNumber = currentInput.innerText;
+  var percentSum = currentNumber / 100;
+  console.log(currentNumber);
+  currentInput.innerText = currentInput.innerText += displayedButton;
+  finalResult.innerText = percentSum;
+  currentNumber = percentSum;
 }; // Logic
 // Calls onNumberButtonClick function when number is clicked
 
@@ -101,4 +129,6 @@ clearButton.addEventListener("click", onClearButtonClick); // Calls onBackButton
 
 backButton.addEventListener("click", onBackButtonClick); // Calls onEqualsButtonClick function when AC is clicked
 
-equalsButton.addEventListener("click", onEqualsButtonClick);
+equalsButton.addEventListener("click", onEqualsButtonClick); // Calls onPercentButtonClick function when AC is clicked
+
+percentButton.addEventListener("click", onPercentButtonClick);
