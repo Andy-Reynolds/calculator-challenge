@@ -16,13 +16,19 @@
   }
 }
 
+body {
+  background-image: linear-gradient((to bottom right),#001A4D, #DC258D);
+  height: 100vh;
+}
+
 .calculator-body {
-  margin: 10px;
+  margin: 40px;
   margin-inline: auto;
   width: 80%;
   height: 90vh;
   border: 1px solid black;
   background-color: $base;
+  border-radius: 10px;
 
   .screen {
     margin: 10px;
