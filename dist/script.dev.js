@@ -56,6 +56,8 @@ var onClearButtonClick = function onClearButtonClick(event) {
 var onBackButtonClick = function onBackButtonClick(event) {
   var displayedButton = event.target.innerText;
   currentInput.innerText = currentInput.innerText.slice(0, -1);
+  currentNumber = currentInput.innerText;
+  console.log(currentNumber);
 }; // Equals button function
 
 
