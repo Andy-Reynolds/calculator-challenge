@@ -9,55 +9,41 @@ const finalResult = document.getElementById("final-result");
 const equalsButton = document.getElementById("equals");
 const percentButton = document.getElementById("percent");
 
-let currentNumber = 0;
+let currentNumber = "";
 let operator = "";
 let secondaryNumber = 0;
 let storedNumber = 0;
 let sum = 0;
 
+
+
 // Functions
 
 
-// Adds clicked number to display
+// Adds clicked number to display and updates currentNumber
 const onNumberButtonClick = (event) => {
   finalResult.innerText = "";
   const displayedButton = event.target.innerText;
-  console.log(displayedButton);
-  console.log(currentNumber);
-  // if (displayedButton == Number) {
-    // currentInput.innerText = "";
-    currentNumber = currentInput.innerText += displayedButton;
-  // } else {
-  //   currentNumber = currentInput.innerText += displayedButton;
-  // }
-  console.log(currentNumber);
+  currentNumber = currentInput.innerText += displayedButton;
 };
 
-// Adds clicked operator to display
+
+// Stores clicked operator and clears display
 const onOperatorButtonClick = (event) => {
   currentInput.innerText = "";
   finalResult.innerText = "";
-  const displayedButton = event.target.innerText;
-  currentInput.innerText += displayedButton;
 
   operator = event.target.value;
-  currentInput.innerText = "";
-
-  console.log(operator);
 
   if (currentNumber) {
-    console.log("Current number before operator click is " + currentNumber);
     storedNumber = currentNumber;
     currentNumber = "";
-    console.log("Current number after operator click is " + currentNumber);
-    console.log("stored number is " + storedNumber);
   }
 
-  console.log(displayedButton);
-  console.log(typeof displayedButton);
 };
 
-// Clears display
+
+// Clears display and resets number and operator variables
 const onClearButtonClick = (event) => {
   currentInput.innerText = "";
   finalResult.innerText = "";
@@ -68,13 +54,14 @@ const onClearButtonClick = (event) => {
   sum = 0;
 };
 
+
 // Clears one character from display
 const onBackButtonClick = (event) => {
   const displayedButton = event.target.innerText;
   currentInput.innerText = currentInput.innerText.slice(0,-1);
   currentNumber = currentInput.innerText
-  console.log(currentNumber); 
 };
+
 
 // Equals button function
 const onEqualsButtonClick = (event) => {
@@ -89,21 +76,22 @@ const onEqualsButtonClick = (event) => {
     break;
     case "" : sum = parseFloat(currentNumber);
   }
-  console.log(sum);
+
   currentInput.innerText = "";
   finalResult.innerText = sum
 };
 
+
+// Converts number to a percentage of 100
 const onPercentButtonClick = event => {
   const displayedButton = event.target.innerText;
-  console.log(displayedButton);
   currentNumber = currentInput.innerText;
   const percentSum = currentNumber/100;
-  console.log(currentNumber);
   currentInput.innerText = currentInput.innerText += displayedButton;
   finalResult.innerText = percentSum;
   currentNumber = percentSum;
-}
+};
+
 
 
 // Logic
