@@ -7,7 +7,6 @@ const operatorButtons = document.getElementsByClassName("buttons__operator");
 const currentInput = document.getElementById("current-input");
 const finalResult = document.getElementById("final-result");
 const equalsButton = document.getElementById("equals");
-const percentButton = document.getElementById("percent");
 
 let currentNumber = "";
 let operator = "";
@@ -74,22 +73,13 @@ const onEqualsButtonClick = (event) => {
     break;
     case "divide": sum = parseFloat(storedNumber) / parseFloat(currentNumber);
     break;
+    case "percent": sum = (parseFloat(storedNumber)/100) * parseFloat(currentNumber);
+    break;
     case "" : sum = parseFloat(currentNumber);
   }
 
   currentInput.innerText = "";
   finalResult.innerText = sum
-};
-
-
-// Converts number to a percentage of 100
-const onPercentButtonClick = event => {
-  const displayedButton = event.target.innerText;
-  currentNumber = currentInput.innerText;
-  const percentSum = currentNumber/100;
-  currentInput.innerText = currentInput.innerText += displayedButton;
-  finalResult.innerText = percentSum;
-  currentNumber = percentSum;
 };
 
 
@@ -115,6 +105,3 @@ backButton.addEventListener("click", onBackButtonClick);
 
 // Calls onEqualsButtonClick function when AC is clicked
 equalsButton.addEventListener("click", onEqualsButtonClick);
-
-// Calls onPercentButtonClick function when AC is clicked
-percentButton.addEventListener("click", onPercentButtonClick);

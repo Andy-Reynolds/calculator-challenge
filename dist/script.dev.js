@@ -9,7 +9,6 @@ var operatorButtons = document.getElementsByClassName("buttons__operator");
 var currentInput = document.getElementById("current-input");
 var finalResult = document.getElementById("final-result");
 var equalsButton = document.getElementById("equals");
-var percentButton = document.getElementById("percent");
 var currentNumber = "";
 var operator = "";
 var secondaryNumber = 0;
@@ -72,22 +71,16 @@ var onEqualsButtonClick = function onEqualsButtonClick(event) {
       sum = parseFloat(storedNumber) / parseFloat(currentNumber);
       break;
 
+    case "percent":
+      sum = parseFloat(storedNumber) / 100 * parseFloat(currentNumber);
+      break;
+
     case "":
       sum = parseFloat(currentNumber);
   }
 
   currentInput.innerText = "";
   finalResult.innerText = sum;
-}; // Converts number to a percentage of 100
-
-
-var onPercentButtonClick = function onPercentButtonClick(event) {
-  var displayedButton = event.target.innerText;
-  currentNumber = currentInput.innerText;
-  var percentSum = currentNumber / 100;
-  currentInput.innerText = currentInput.innerText += displayedButton;
-  finalResult.innerText = percentSum;
-  currentNumber = percentSum;
 }; // Logic
 // Calls onNumberButtonClick function when number is clicked
 
@@ -106,6 +99,4 @@ clearButton.addEventListener("click", onClearButtonClick); // Calls onBackButton
 
 backButton.addEventListener("click", onBackButtonClick); // Calls onEqualsButtonClick function when AC is clicked
 
-equalsButton.addEventListener("click", onEqualsButtonClick); // Calls onPercentButtonClick function when AC is clicked
-
-percentButton.addEventListener("click", onPercentButtonClick);
+equalsButton.addEventListener("click", onEqualsButtonClick);
