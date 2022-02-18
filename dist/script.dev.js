@@ -81,6 +81,7 @@ var onEqualsButtonClick = function onEqualsButtonClick(event) {
 
   currentInput.innerText = "";
   finalResult.innerText = sum;
+  currentNumber = sum;
 }; // Logic
 // Calls onNumberButtonClick function when number is clicked
 

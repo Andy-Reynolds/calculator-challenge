@@ -80,6 +80,7 @@ const onEqualsButtonClick = (event) => {
 
   currentInput.innerText = "";
   finalResult.innerText = sum
+  currentNumber = sum;
 };
 
 
