@@ -86,7 +86,8 @@ body {
       border: 1px solid $screen;
       margin: 10px;
       margin-inline: auto;
-      border-radius: 50%;
+      // border-radius: 50%;
+      border-radius: 100rem 100rem 100rem 100rem;
       width: 80%;
       background-color: $button-base;
       color: $light-text;
@@ -97,12 +98,18 @@ body {
         color: $button-base;
       }
 
-      @media screen and (min-width: 768px) {
-          border-radius: 30%;
-      }
+      // @media screen and (min-width: 768px) {
+      //     border-radius: 30%;
+      // }
 
       &__clear {
         grid-area: 1/1/2/2;
+        background-color: $clear;
+        color: $dark-text;
+      }
+
+      &__back {
+        grid-area: 1/2/2/3;
         background-color: $clear;
         color: $dark-text;
       }
@@ -187,12 +194,8 @@ body {
         grid-area: 5/2/6/3;
       }
 
-      &__back {
-        grid-area: 5/3/6/4;
-      }
-
       &__equals {
-        grid-area: 5/4/6/5;
+        grid-area: 5/3/6/5;
         background-color: $equals;
         color: $dark-text;
       }

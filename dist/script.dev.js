@@ -87,7 +87,7 @@ var onEqualsButtonClick = function onEqualsButtonClick(event) {
 
 for (var index = 0; index < numberButtons.length; index++) {
   numberButtons[index].addEventListener("click", onNumberButtonClick);
-} // Calls onOperatorButtonClick function when number is clicked
+} // Calls onOperatorButtonClick function when operator is clicked
 
 
 for (var _index = 0; _index < operatorButtons.length; _index++) {
@@ -95,8 +95,8 @@ for (var _index = 0; _index < operatorButtons.length; _index++) {
 } // Calls onClearButtonClick function when AC is clicked
 
 
-clearButton.addEventListener("click", onClearButtonClick); // Calls onBackButtonClick function when AC is clicked
+clearButton.addEventListener("click", onClearButtonClick); // Calls onBackButtonClick function when back is clicked
 
-backButton.addEventListener("click", onBackButtonClick); // Calls onEqualsButtonClick function when AC is clicked
+backButton.addEventListener("click", onBackButtonClick); // Calls onEqualsButtonClick function when equals is clicked
 
 equalsButton.addEventListener("click", onEqualsButtonClick);

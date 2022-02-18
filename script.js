@@ -92,7 +92,7 @@ for (let index = 0; index < numberButtons.length; index++) {
   numberButtons[index].addEventListener("click", onNumberButtonClick);
 }
 
-// Calls onOperatorButtonClick function when number is clicked
+// Calls onOperatorButtonClick function when operator is clicked
 for (let index = 0; index < operatorButtons.length; index++) {
   operatorButtons[index].addEventListener("click", onOperatorButtonClick);
 }
@@ -100,8 +100,8 @@ for (let index = 0; index < operatorButtons.length; index++) {
 // Calls onClearButtonClick function when AC is clicked
 clearButton.addEventListener("click", onClearButtonClick);
 
-// Calls onBackButtonClick function when AC is clicked
+// Calls onBackButtonClick function when back is clicked
 backButton.addEventListener("click", onBackButtonClick);
 
-// Calls onEqualsButtonClick function when AC is clicked
+// Calls onEqualsButtonClick function when equals is clicked
 equalsButton.addEventListener("click", onEqualsButtonClick);

@@ -80,7 +80,7 @@ body {
   border: 1px solid #33383E;
   margin: 10px;
   margin-inline: auto;
-  border-radius: 50%;
+  border-radius: 100rem 100rem 100rem 100rem;
   width: 80%;
   background-color: #292A2E;
   color: white;
@@ -90,13 +90,13 @@ body {
   background-color: white;
   color: #292A2E;
 }
-@media screen and (min-width: 768px) {
-  .calculator-body .inputs .buttons {
-    border-radius: 30%;
-  }
-}
 .calculator-body .inputs .buttons__clear {
   grid-area: 1/1/2/2;
+  background-color: #C3EED0;
+  color: black;
+}
+.calculator-body .inputs .buttons__back {
+  grid-area: 1/2/2/3;
   background-color: #C3EED0;
   color: black;
 }
@@ -163,11 +163,8 @@ body {
 .calculator-body .inputs .buttons__point {
   grid-area: 5/2/6/3;
 }
-.calculator-body .inputs .buttons__back {
-  grid-area: 5/3/6/4;
-}
 .calculator-body .inputs .buttons__equals {
-  grid-area: 5/4/6/5;
+  grid-area: 5/3/6/5;
   background-color: #D78B3C;
   color: black;
 }
