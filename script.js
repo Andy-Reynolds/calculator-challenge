@@ -3,7 +3,7 @@ const allButtons = document.getElementsByClassName("buttons");
 const numberButtons = document.getElementsByClassName("buttons__number");
 const clearButton = document.getElementById("clear");
 const backButton = document.getElementById("back");
-const operatorButtons = document.getElementsByClassName("buttons__operator");
+const operatorButtons = document.querySelectorAll(".buttons__operator");
 const currentInput = document.getElementById("current-input");
 const finalResult = document.getElementById("final-result");
 const equalsButton = document.getElementById("equals");
@@ -27,7 +27,7 @@ const onNumberButtonClick = (event) => {
 };
 
 
-// Stores clicked operator and clears display
+// Stores and highlights clicked operator and clears display
 const onOperatorButtonClick = (event) => {
   currentInput.innerText = "";
   finalResult.innerText = "";
@@ -38,6 +38,12 @@ const onOperatorButtonClick = (event) => {
     storedNumber = currentNumber;
     currentNumber = "";
   }
+
+  for (let index = 0; index < operatorButtons.length; index++) {
+    operatorButtons[index].classList.remove('active');
+  };
+
+  event.target.classList.add("active");
 
 };
 
@@ -51,6 +57,10 @@ const onClearButtonClick = (event) => {
   secondaryNumber = "";
   storedNumber = 0;
   sum = 0;
+
+  for (let index = 0; index < operatorButtons.length; index++) {
+    operatorButtons[index].classList.remove('active');
+  };
 };
 
 
@@ -81,6 +91,10 @@ const onEqualsButtonClick = (event) => {
   currentInput.innerText = "";
   finalResult.innerText = sum
   currentNumber = sum;
+
+  for (let index = 0; index < operatorButtons.length; index++) {
+    operatorButtons[index].classList.remove('active');
+  };
 };
 
 

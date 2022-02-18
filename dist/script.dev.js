@@ -5,7 +5,7 @@ var allButtons = document.getElementsByClassName("buttons");
 var numberButtons = document.getElementsByClassName("buttons__number");
 var clearButton = document.getElementById("clear");
 var backButton = document.getElementById("back");
-var operatorButtons = document.getElementsByClassName("buttons__operator");
+var operatorButtons = document.querySelectorAll(".buttons__operator");
 var currentInput = document.getElementById("current-input");
 var finalResult = document.getElementById("final-result");
 var equalsButton = document.getElementById("equals");
@@ -20,7 +20,7 @@ var onNumberButtonClick = function onNumberButtonClick(event) {
   finalResult.innerText = "";
   var displayedButton = event.target.innerText;
   currentNumber = currentInput.innerText += displayedButton;
-}; // Stores clicked operator and clears display
+}; // Stores and highlights clicked operator and clears display
 
 
 var onOperatorButtonClick = function onOperatorButtonClick(event) {
@@ -32,6 +32,13 @@ var onOperatorButtonClick = function onOperatorButtonClick(event) {
     storedNumber = currentNumber;
     currentNumber = "";
   }
+
+  for (var index = 0; index < operatorButtons.length; index++) {
+    operatorButtons[index].classList.remove('active');
+  }
+
+  ;
+  event.target.classList.add("active");
 }; // Clears display and resets number and operator variables
 
 
@@ -43,6 +50,12 @@ var onClearButtonClick = function onClearButtonClick(event) {
   secondaryNumber = "";
   storedNumber = 0;
   sum = 0;
+
+  for (var index = 0; index < operatorButtons.length; index++) {
+    operatorButtons[index].classList.remove('active');
+  }
+
+  ;
 }; // Clears one character from display
 
 
@@ -82,6 +95,12 @@ var onEqualsButtonClick = function onEqualsButtonClick(event) {
   currentInput.innerText = "";
   finalResult.innerText = sum;
   currentNumber = sum;
+
+  for (var index = 0; index < operatorButtons.length; index++) {
+    operatorButtons[index].classList.remove('active');
+  }
+
+  ;
 }; // Logic
 // Calls onNumberButtonClick function when number is clicked
 

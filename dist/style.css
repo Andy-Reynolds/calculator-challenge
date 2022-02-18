@@ -182,3 +182,6 @@ body {
   color: black;
   width: 90%;
 }
+.calculator-body .inputs .active {
+  background-color: white;
+}
