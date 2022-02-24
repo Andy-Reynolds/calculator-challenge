@@ -1,0 +1,24 @@
+{
+  "name": "calculator-challenge",
+  "version": "1.0.0",
+  "description": "This calculator can compute a whopping two whole numbers at a time.\r Please click equals between each operation.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andy-Reynolds/calculator-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andy-Reynolds/calculator-challenge/issues"
+  },
+  "homepage": "https://github.com/Andy-Reynolds/calculator-challenge#readme",
+  "devDependencies": {
+    "cypress": "^9.5.0"
+  }
+}
